@@ -1,0 +1,280 @@
+body {
+    background-color: #F0EFF2;
+}
+
+.list {
+    margin-top: 50px;
+    font-family: 'Inter';
+    padding: 60px 0 80px;
+}
+
+.list__title,
+.list__month,
+.list__tabs,
+.list__message,
+.list__panel,
+.list__actions {
+    max-width: 860px;
+    width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list__title {
+    margin-bottom: 22px;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.list__title::before {
+    content: "";
+    width: 6px;
+    height: 28px;
+    background: #000;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/* 月（or 日）切り替え */
+.list__month {
+    margin-bottom: 18px;
+    height: 54px;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.list__month-link {
+    color: #737373;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.list__month-link:hover {
+    opacity: 0.85;
+}
+
+.list__month-link--prev {
+    justify-self: start;
+}
+
+.list__month-link--next {
+    justify-self: end;
+}
+
+.list__month-label {
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list__month-label::before {
+    content: "🗓️";
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* ===== パネル（横スクロール） ===== */
+.list__panel {
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* テーブル本体 */
+.list__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 680px;
+}
+
+/* 行 */
+.list__tr:hover .list__td {
+    background: #fafafa;
+}
+
+.list__tr--last .list__td {
+    border-bottom: none;
+}
+
+/* 見出しセル */
+.list__th {
+    color: #737373;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 3px solid #E1E1E1;
+    white-space: nowrap;
+}
+
+/* 本文セル */
+.list__td {
+    color: #737373;
+    padding: 12px 12px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 3px solid #E1E1E1;
+    white-space: nowrap;
+}
+
+/* 詳細リンク */
+.list__detail-link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.list__detail-link:hover {
+    text-decoration: underline;
+}
+
+/* CSVボタン */
+.list__actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list__csv {
+    display: inline-block;
+    padding: 10px 32px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.list__csv:hover {
+    background-color: #333;
+}
+
+/* ===== 申請一覧だけに必要な追加 ===== */
+
+.list__tabs {
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    padding-left: 20px;
+    border-bottom: 2px solid #E1E1E1;
+}
+
+.list__tab {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.list__tab.is-active {
+    font-size: 18px;
+}
+
+.list__message {
+    margin-top: 20px;
+    color: #e85a5a;
+    font-size: 14px;
+    text-align: right;
+}
+
+.list__empty {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* タブレット以下 */
+@media (max-width: 920px) {
+    .list {
+        padding: 50px 0 70px;
+    }
+
+    .list__title {
+        font-size: 26px;
+    }
+
+    .list__th,
+    .list__td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    .list__month {
+        height: 50px;
+        padding: 0 14px;
+    }
+
+    .list__month-label {
+        font-size: 18px;
+    }
+}
+
+/* スマホ */
+@media (max-width: 480px) {
+    .list {
+        padding: 40px 0 60px;
+    }
+
+    .list__title {
+        font-size: 22px;
+    }
+
+    .list__title::before {
+        height: 22px;
+    }
+
+    .list__month {
+        height: 48px;
+        padding: 0 12px;
+    }
+
+    .list__month-link {
+        font-size: 14px;
+    }
+
+    .list__month-label {
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .list__table {
+        min-width: 720px;
+    }
+
+    .list__tabs {
+        gap: 24px;
+        padding-left: 12px;
+    }
+
+    .list__tab {
+        font-size: 15px;
+    }
+
+    .list__tab.is-active {
+        font-size: 16px;
+    }
+}

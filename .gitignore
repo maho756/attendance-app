@@ -1,0 +1,19 @@
+
+# mac
+.DS_Store
+
+# Laravel
+/vendor
+/node_modules
+.env
+.env.testing
+
+# Docker MySQL data
+/docker/mysql/data
+
+# IDE
+.idea
+.vscode
+
+# Logs
+*.log

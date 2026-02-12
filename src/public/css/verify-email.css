@@ -1,0 +1,83 @@
+.verify {
+    font-family: 'Inter';
+    font-weight: 700;
+    color: #000000;
+    width: 100%;
+    max-width: 680px;
+    margin: 50px auto;
+    padding: 40px 20px;
+}
+
+.verify__message {
+    font-size: 20px;
+    text-align: center;
+}
+
+.verify__success {
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+.verify__actions {
+    margin-top: 40px;
+    display: grid;
+    gap: 28px;
+    justify-content: center;
+}
+
+.btn {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn--primary {
+    padding: 15px;
+    background-color: #D9D9D9;
+    color: #000000;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    transition: background-color 0.3s ease;
+}
+
+.btn--primary:hover {
+    background-color: #cfcfcf;
+}
+
+.verify__form {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn--secondary {
+    background: none;
+    border: none;
+    color: #0073CC;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.btn--secondary:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .verify {
+        margin: 24px auto;
+        padding: 24px 14px;
+    }
+
+    .verify__message {
+        font-size: 18px;
+    }
+
+    .verify__actions {
+        margin-top: 28px;
+        gap: 18px;
+    }
+
+    .btn--primary {
+        font-size: 16px;
+        padding: 12px 14px;
+    }
+}
